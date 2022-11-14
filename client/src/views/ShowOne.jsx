@@ -10,8 +10,24 @@ const ShowOne = (props) => {
     })
     const [name, setName] = useState("");
 
+    useEffect(() => {
+        axios.get(`http://localhost:9001/api/author/${id}`)
+            .then(res =>{
+                console.log(res)
+                setAuthor(res.data.oneAuthorById);
+                setName(res.data.name);
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+    })
+
     return(
         <>
+        <div className='container card d-block mx-auto w-85 my-3 p-3'>
+                <p>Author id: {id}</p>
+                <h1>Author Name: {title}</h1>
+            </div>
         </>
     )
 }

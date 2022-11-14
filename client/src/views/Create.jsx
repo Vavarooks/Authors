@@ -11,9 +11,9 @@ const Create = (props) => {
         const newAuthor ={
             name: name
         }
+        newAuthorApi(newAuthor)
+        setName("")
     }
-    newAuthorApi(newAuthor)
-    setName("")
     
     const newAuthorApi = (author) => {
         axios.post("http://localhost:9001/api/author/create", author)
