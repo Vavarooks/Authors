@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom'
-import Create from './veiws/Create';
-import NotFound from './veiws/NotFound';
-import ShowOne from './veiws/ShowOne';
-import ShowAll from './veiws/ShowAll';
-import EditOne from './veiws/Edit';
+import Create from './views/Create';
+import NotFound from './views/NotFound';
+import ShowOne from './views/ShowOne';
+import ShowAll from './views/ShowAll';
+import EditOne from './views/Edit';
 
 function App() {
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-light">
@@ -14,29 +15,31 @@ function App() {
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <a className="navbar-brand">Happy Browsing</a>
+          <a className="navbar-brand">Happy Shoping</a>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to={`/`}>Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to={`/author`}>Authors</Link>
+              <Link className="nav-link active" aria-current="page" to={`/author`}>Shop</Link>
               </li>
             </ul>
+            <form className="d-flex" role="search">
+              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button className="btn btn-outline-success" type="submit">Search</button>
+            </form>
           </div>
         </div>
       </nav>
       <Routes>
-        <Route path='/' element={<Create/>} />
-        <Route path='/author/:id' element={<ShowOne/>} />
-        {/* <Route path='/author/update/:id' element={<EditOne />} />
+        <Route path='/' element={<Create />} />
+        <Route path='/author/:id' element={<ShowOne />} />
+        <Route path='/author/update/:id' element={<EditOne />} />
         <Route path='/author' element={<ShowAll />} />
-        <Route path='/*' element={<NotFound />} /> */}
+        <Route path='/*' element={<NotFound />} />
       </Routes>
     </>
-
   );
 }
-
 export default App;

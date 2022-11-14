@@ -6,7 +6,7 @@ require("./server/config/config.mongo")
 
 app.use(express.json(), express.urlencoded({extended:true}));
 app.use(cors()) // This is new
-require('./server/routes/route')(app);
+require('./server/routes/manage.route')(app);
 
 
 app.listen(9001, () => {
