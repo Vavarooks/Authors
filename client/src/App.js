@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom'
-import Main from './veiws/Main';
+import Create from './veiws/Create';
 import NotFound from './veiws/NotFound';
 import ShowOne from './veiws/ShowOne';
 import ShowAll from './veiws/ShowAll';
@@ -28,11 +28,11 @@ function App() {
         </div>
       </nav>
       <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/author/:id' element={<ShowOne />} />
-        <Route path='/author/update/:id' element={<EditOne />} />
+        <Route path='/' element={<Create/>} />
+        <Route path='/author/:id' element={<ShowOne/>} />
+        {/* <Route path='/author/update/:id' element={<EditOne />} />
         <Route path='/author' element={<ShowAll />} />
-        <Route path='/*' element={<NotFound />} />
+        <Route path='/*' element={<NotFound />} /> */}
       </Routes>
     </>
 
