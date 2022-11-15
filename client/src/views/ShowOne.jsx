@@ -23,7 +23,7 @@ const ShowOne = (props) => {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:9001/api/Author/${id}`)
+        axios.get(`http://localhost:9001/api/author/${id}`)
             .then(res =>{
                 console.log(res)
                 setAuthor(res.data.oneAuthorById);

@@ -19,14 +19,14 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to={`/`}>Home</Link>
+                <Link className="nav-link active" aria-current="page" to={`/author`}>Home</Link>
               </li>
             </ul>
           </div>
         </div>
       </nav>
       <Routes>
-        <Route path='/' element={<ShowAll />} />
+        <Route path='/author' element={<ShowAll />} />
         <Route path='/author' element={<Create />} />
         <Route path='/author/:id' element={<ShowOne />} />
         <Route path='/author/update/:id' element={<EditOne />} />

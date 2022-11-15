@@ -46,7 +46,7 @@ const Create = (props) => {
                 <input className="form-control" type='text' value={name} onChange={e => setName(e.target.value)} />
                 <br />
                 <button className='btn btn-secondary' onClick={formHandler}> Submit </button>
-                <Link className='btn btn-primary' to={'/'}>Cancel</Link>
+                <Link className='btn btn-primary' to={'/author'}>Cancel</Link>
             </div>
         </>
     )

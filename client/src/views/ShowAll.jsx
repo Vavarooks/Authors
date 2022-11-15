@@ -3,16 +3,16 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-const ShowAll = (props) => {
+const ShowAll = () => {
     const [authors, setAuthor] = useState([]);
     const [loaded, setLoaded] = useState(false);
-    const { removeAuthor } = props;
 
     const deleteAuthor = (id) => {
         axios.delete(`http://localhost:9001/api/author/${id}`)
             .then(res => {
-                removeAuthor(id)
                 console.log(res);
+
+                authors.filter((author) => author._id !== id)
             })
             .catch(err => console.error(err));
     }
@@ -31,7 +31,7 @@ const ShowAll = (props) => {
     return (
         <>
             < div className='container d-block mx-auto w-50 my-3 p-3' >
-                <Link className="btn btn-secondary" to={'/author'}>Add Author</Link>
+                <Link className="btn btn-secondary" to={'/author/add'}>Add Author</Link>
                 <div className="row row-cols-2">
                     <div className="col-sm-8">
                         {loaded && authors.map((author, key) =>
@@ -40,7 +40,7 @@ const ShowAll = (props) => {
                                     <div className="card-body">
                                         <h3 className="card-title">Author Name: <Link to={`/author/${author._id}`}>{author.name}</Link></h3>
                                         <Link className='btn btn-warning' to={`/author/update/${author._id}`}>Edit</Link>
-                                        <button className='btn btn-danger' onClick={(e) => { deleteAuthor(author._id) }}>Delete</button>
+                                        <button className='btn btn-danger' onClick={() => deleteAuthor(author._id)}>Delete</button>
                                     </div>
                                 </div>
                             </div>
