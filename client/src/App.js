@@ -26,11 +26,12 @@ function App() {
         </div>
       </nav>
       <Routes>
-        <Route path='/author' element={<ShowAll />} />
-        <Route path='/author' element={<Create />} />
-        <Route path='/author/:id' element={<ShowOne />} />
-        <Route path='/author/update/:id' element={<EditOne />} />
-        <Route path='/*' element={<NotFound />} />
+        <Route path='/author' element={<ShowAll />}/>
+        <Route path='/author/add' element={<Create/>}/>
+        <Route path='/author' element={<Create />}/>
+        <Route path='/author/:id' element={<ShowOne />}/>
+        <Route path='/author/update/:id' element={<EditOne/>}/>
+        <Route path='/*' element={<NotFound/>}/>
       </Routes>
     </>
   );

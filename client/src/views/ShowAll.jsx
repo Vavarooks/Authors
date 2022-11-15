@@ -12,7 +12,7 @@ const ShowAll = () => {
             .then(res => {
                 console.log(res);
 
-                authors.filter((author) => author._id !== id)
+                setAuthor(authors.filter((author) => author._id !== id))
             })
             .catch(err => console.error(err));
     }
@@ -30,7 +30,7 @@ const ShowAll = () => {
 
     return (
         <>
-            < div className='container d-block mx-auto w-50 my-3 p-3' >
+            <div className='container d-block mx-auto w-50 my-3 p-3' >
                 <Link className="btn btn-secondary" to={'/author/add'}>Add Author</Link>
                 <div className="row row-cols-2">
                     <div className="col-sm-8">
@@ -47,7 +47,7 @@ const ShowAll = () => {
                         )}
                     </div>
                 </div>
-            </div >
+            </div>
         </>
 
     )

@@ -39,7 +39,6 @@ const ShowOne = (props) => {
             <div className='container card d-block mx-auto w-85 my-3 p-3'>
                 <p>Author id: {id}</p>
                 <h1>Author Name: {name}</h1>
-                <button className='btn btn-danger' onClick={(e) => { deleteAuthor(id) }}>Delete</button>
             </div>
         </>
     )
