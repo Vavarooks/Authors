@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import {Navigate, useNavigate, useParams} from 'react-router-dom';
+import {Navigate, useNavigate, useParams, Link} from 'react-router-dom';
 const EditOne = (props) => {
 
     const {id} = useParams();
@@ -51,6 +51,7 @@ const EditOne = (props) => {
                 <input className="form-control" type='text' value={name} onChange={e => setName(e.target.value)} />
                 <br />
                 <button className='btn btn-secondary' onClick={editHandler}> Edit </button>
+                <Link className='btn btn-primary' to={'/'}>Cancel</Link>
             </div>
         </>
     )

@@ -5,24 +5,18 @@ const ShowOne = (props) => {
 
     const {id} = useParams();
 
-    const [product, setProduct] = useState({
+    const [author, setAuthor] = useState({
         _id: "",
-        title: "",
-        price: "",
-        description: ""
+        name: ""
     })
-    const [title, setTitle] = useState("");
-    const [price, setPrice] = useState("");
-    const [description, setDesc] = useState("");
+    const [name, setName] = useState("");
 
     useEffect(() => {
-        axios.get(`http://localhost:9001/api/product/${id}`)
+        axios.get(`http://localhost:9001/api/Author/${id}`)
             .then(res =>{
                 console.log(res)
-                setProduct(res.data.oneProductById);
-                setTitle(res.data.title)
-                setPrice(res.data.price);
-                setDesc(res.data.description);
+                setAuthor(res.data.oneAuthorById);
+                setName(res.data.name)
             })
             .catch(err =>{
                 console.log(err)
@@ -32,10 +26,8 @@ const ShowOne = (props) => {
     return (
         <>
             <div className='container card d-block mx-auto w-85 my-3 p-3'>
-                <p>Product id: {id}</p>
-                <h1>Product Name: {title}</h1>
-                <h3>Price: $ {price}</h3>
-                <h6>Description: {description}</h6>
+                <p>Author id: {id}</p>
+                <h1>Author Name: {name}</h1>
             </div>
         </>
     )
