@@ -11,6 +11,17 @@ const ShowOne = (props) => {
     })
     const [name, setName] = useState("");
 
+    const { removeAuthor } = props;
+
+    const deleteAuthor = (id) => {
+        axios.delete(`http://localhost:9001/api/author/${id}`)
+            .then(res => {
+                removeAuthor(id)
+                console.log(res);
+            })
+            .catch(err => console.error(err));
+    }
+
     useEffect(() => {
         axios.get(`http://localhost:9001/api/Author/${id}`)
             .then(res =>{
@@ -28,6 +39,7 @@ const ShowOne = (props) => {
             <div className='container card d-block mx-auto w-85 my-3 p-3'>
                 <p>Author id: {id}</p>
                 <h1>Author Name: {name}</h1>
+                <button className='btn btn-danger' onClick={(e) => { deleteAuthor(id) }}>Delete</button>
             </div>
         </>
     )

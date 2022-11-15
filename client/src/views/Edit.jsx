@@ -53,6 +53,8 @@ const EditOne = (props) => {
                 <button className='btn btn-secondary' onClick={editHandler}> Edit </button>
                 <Link className='btn btn-primary' to={'/'}>Cancel</Link>
             </div>
+            <p>{id}</p>
+            <p>{name}</p>
         </>
     )
 }
